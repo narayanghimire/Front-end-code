@@ -1,0 +1,48 @@
+{{define "STYLE"}}{{end}}
+{{define "BODY"}}
+<meta http-equiv="refresh" content="50" />
+    <p>
+    <h1>BlockChain Asset Transfer</h1>
+    </p>
+
+<b>Hi {{.Username}}</b>
+
+<br> <br>
+
+Your Wallet Balance  : {{.Balance}}
+
+{{ if .ErrorMessage }}
+<div class="error">{{ .ErrorMessage }}</div>
+{{end}}
+
+
+{{if .Users}}
+<br><br>
+
+<form action="/transfermoney" method="post">
+<center><b>Transfer money</b><center>
+
+
+
+
+    <span>User  </span>
+<select name="selected_user">
+{{ range $user := .Users}}
+    <option  value="{{ $user }}">{{ $user }}</option>
+
+{{end}}
+</select>
+
+<br><br>
+
+Money <input type="number" name="amount">
+<br><br>
+<input type="submit" value="Transfer">
+
+
+</form>
+{{end}}
+
+
+
+{{end}}

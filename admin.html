@@ -1,0 +1,41 @@
+{{define "STYLE"}}{{end}}
+{{define "BODY"}}
+
+    <p>
+  <center>  <h1>BlockChain Asset Transfer</h1> </center>
+    </p>
+
+<br> <b>Welcome Admin </b> <br> <br>
+
+You can crete User Here
+
+<form action="/createuser" method="post" >
+  <table>
+<tr><td>Username: </td><td> <input type="text" name="username"></td></tr>
+<tr><td>Default password:</td><td>  <input type="text" name="pass"> </td></tr>
+<tr><td>Balance: </td><td> <input type="number" name="balance"></td></tr>
+<tr><td><input type="submit" value="Create"></td></tr>
+</table>
+
+</form>
+
+
+{{ if .ErrorMessage }}
+<div class="error">{{ .ErrorMessage }}</div>
+{{end}}
+
+
+{{if .Users}}
+<br><br>
+Users
+<table>
+{{ range $user := .Users}}
+<tr>
+    <td>{{$user}} </td>
+
+</tr>
+{{end}}
+</table>
+{{end}}
+
+{{end}}

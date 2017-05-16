@@ -1,0 +1,26 @@
+{{define "STYLE"}}{{end}}
+{{define "BODY"}}
+
+    <p>
+    <h1>BlockChain Asset Transfer</h1>
+    </p>
+
+Sign IN
+
+  <form action="/login" method="post" >
+    <table>
+<tr><td>Username: </td><td> <input type="text" name="username"></td></tr>
+<tr><td>password:</td><td>  <input type="text" name="pass"> </td></tr>
+<tr><td><input type="submit" value="Login"></td></tr>
+</table>
+
+</form>
+
+{{ if .ErrorMessage }}
+<div class="error">{{ .ErrorMessage }}</div>
+{{end}}
+
+
+
+
+{{end}}
